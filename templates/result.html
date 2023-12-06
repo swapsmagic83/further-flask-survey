@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block result %}
+
+ <h1 class=" text-center p-5 text-success">Thank You for completing {{choosensurvey}} survey</h1> 
+<p class="h2 text-center text-success">Below are the list of all the Questions and answers : </p> 
+ <ul >
+    {% for i in range(questions|count) %}
+    <li class="">
+            <b>{{questions[i]}} </b> 
+            <i>{{responses[i].choice}} {{responses[i].text}}</i>   
+    </li>
+    {% endfor %}
+    
+</ul>
+{% endblock %}

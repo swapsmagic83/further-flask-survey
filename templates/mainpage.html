@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block main %}
+<h1 class="text-center text-success p-5">Welcome to the Survey App</h1>
+<h2 class="text-center text-success p-5">Choose the Survey Options Here</h2>
+<form action="/" method="POST" class="d-block text-center " >
+    <button name="satisfaction" value="Satisfaction Survey" class="bg-success text-light py-1 px-2"> Satisfaction Survey</button>
+</form>
+<form action="/" method="POST" class="text-center p-2" >
+    <button  name="personality" value="Personality Survey" class="bg-success text-light py-1 px-2"> Personality Survey</button>
+</form>
+{% endblock %}

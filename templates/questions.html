@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block question %}
+
+{% for msg in get_flashed_messages() %}
+<h1 class="text-center text-danger">{{msg}}</h1>
+{% endfor %}
+
+<form action="/answer/{{choosensurvey}}/{{index}}" method="POST" class=" text-center text-success p-5">
+   <h1 class=" p-5" name="question" value="{{question}}"> {{question}}</h1> 
+  <div >
+    {% for choice in choices %}
+    <span class="d-block h5 py-1" ><input type="radio" name="choice" id="choice" value="{{choice}}" required> {{choice}}</span>
+    {% endfor %}
+   </div>
+   {% if text %}
+  <textarea name="text" id="" cols="30" rows="10"></textarea>
+  {% endif %}
+   <button class="bg-success text-light py-1 px-2"> Next</button>
+</form>
+
+{% endblock %}
